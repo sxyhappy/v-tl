@@ -1,0 +1,99 @@
+.v-tl {
+  position: relative;
+  height: 60px;
+  line-height: 1;
+
+  user-select: none;
+
+  &__axis {
+    position: absolute;
+    height: 2px;
+    bottom: 20px;
+    background: rgba(#ffffff, 0.1);
+  }
+
+  &__tick {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+
+    &--odd {
+      .v-tl__tick__inner {
+        width: 2px;
+        height: 2px;
+      }
+    }
+
+    &__inner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-white);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 6px;
+
+    font-size: var(--font-small);
+    color: rgba(235, 235, 245, 0.7);
+  }
+
+  &__tip {
+    position: absolute;
+    bottom: 25px;
+    cursor: pointer;
+
+    &__inner {
+      width: 1px;
+      height: 1px;
+      background: transparent;
+    }
+
+    &__handler {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid var(--color-primary);
+
+      background: var(--color-white);
+    }
+
+    &__content {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transform: translateX(-50%);
+
+      text-align: center;
+      font-size: var(--font-small);
+      background: var(--color-primary);
+
+      &::after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        bottom: -12px;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-top: 6px solid var(--color-primary);
+      }
+    }
+  }
+}
